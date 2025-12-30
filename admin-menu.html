@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Menu | Velvet Brew</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="admin-menu">
+
+  <!-- TOP BAR (reuse dashboard style) -->
+  <header class="admin-topbar">
+    <div class="admin-topbar-inner">
+      <div class="admin-brand">Velvet Brew Admin</div>
+      <div class="admin-actions">
+        <a href="admin-dashboard.html" class="admin-btn">Dashboard</a>
+        <button id="logoutBtn" class="admin-btn">Logout</button>.
+        <a class="btn btn-ghost small" href="admin-orders.html">Orders</a>
+
+      </div>
+    </div>
+  </header>
+
+  <main class="admin-menu-container">
+
+    <div class="admin-menu-header">
+      <div>
+        <h1 class="admin-menu-title">Menu Manager</h1>
+        <p class="admin-menu-sub">Add, edit, and manage menu items</p>
+      </div>
+    </div>
+
+    <section class="admin-menu-grid">
+
+      <!-- ADD ITEM -->
+      <div class="admin-menu-card">
+        <h3>Add New Item</h3>
+
+        <form id="addForm" class="admin-menu-form">
+          <label>Name</label>
+          <input id="name" required placeholder="Velvet Latte" />
+
+          <label>Price</label>
+          <input id="price" type="number" step="0.01" required placeholder="5.99" />
+
+          <label>Category</label>
+          <input id="category" placeholder="Coffee / Iced / Bakery" />
+
+          <label>Tags</label>
+          <input id="tags" placeholder="best, vegan, caffeinefree" />
+
+          <label>Image</label>
+          <input id="image" type="file" accept="image/*" />
+
+          <button type="submit" class="admin-btn primary">Add Item</button>
+          <div id="msg"></div>
+        </form>
+      </div>
+
+      <!-- ITEMS -->
+      <div class="admin-menu-card">
+        <h3>Current Menu Items</h3>
+
+        <div id="items" class="admin-items-list"></div>
+
+        <div id="itemsEmpty" class="admin-items-empty" style="display:none;">
+          No items found.
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="js/admin-menu.js"></script>
+
+  <!-- ================= EDIT MENU MODAL ================= -->
+<div class="modal" id="editModal" aria-hidden="true">
+  <div class="modal-overlay" id="editOverlay"></div>
+
+  <div class="modal-card admin-edit-card">
+    <div class="modal-head">
+      <h3>Edit Menu Item</h3>
+      <button class="modal-close" id="editClose">✕</button>
+    </div>
+
+    <form id="editForm" class="admin-form">
+      <input type="hidden" id="editId" />
+
+      <label>Name</label>
+      <input type="text" id="editName" required />
+
+      <label>Price</label>
+      <input type="number" step="0.01" id="editPrice" required />
+
+      <label>Category</label>
+      <input type="text" id="editCategory" required />
+
+      <label>Description</label>
+      <textarea id="editDescription"></textarea>
+
+      <label>Image (optional)</label>
+      <input type="file" id="editImage" accept="image/*" />
+
+      <img id="editPreview" class="edit-preview" />
+
+      <button class="btn btn-primary" type="submit">
+        Save Changes
+      </button>
+    </form>
+  </div>
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ================= BASIC META ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menu | Velvet Brew</title>
+  <meta name="description" content="Explore Velvet Brew menu: espresso, ice blended, teas, pastries, and whole beans." />
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ================= NAV ================= -->
+  <header class="nav glass-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">VB</span>
+        <span class="brand-text">Velvet Brew</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link active" href="menu.html">Menu</a>
+        <a class="nav-link" href="track-order.html">Track Order</a>
+        <a class="nav-link" href="checkout.html">Checkout</a>
+
+        <a class="nav-icon" href="checkout.html">
+          <span class="icon-circle">🛒</span>
+          <span class="badge" id="cartBadge">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= MENU HERO ================= -->
+    <section class="menu-hero">
+      <div class="container menu-hero-inner">
+        <div>
+          <h1 class="menu-title">Menu</h1>
+          <p class="menu-sub">Explore signature espresso, ice blended drinks, teas, and pastries.</p>
+        </div>
+
+        <div class="menu-tools">
+          <!-- Search -->
+          <div class="menu-search">
+            <input id="searchInput" type="text" placeholder="Search drinks, pastries, beans..." />
+            <button id="clearSearch" type="button">✕</button>
+          </div>
+
+          <!-- Filters -->
+          <div class="menu-filters">
+            <label class="chip">
+              <input type="checkbox" id="filterCaffeineFree" />
+              <span>Caffeine-Free</span>
+            </label>
+
+            <label class="chip">
+              <input type="checkbox" id="filterVegan" />
+              <span>Vegan</span>
+            </label>
+
+            <label class="chip">
+              <input type="checkbox" id="filterBest" />
+              <span>Best Sellers</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STICKY CATEGORY BAR ================= -->
+    <section class="menu-stickybar">
+      <div class="container">
+        <div class="catbar">
+          <a class="catlink" href="#espresso">Espresso</a>
+          <a class="catlink" href="#iceblended">Ice Blended</a>
+          <a class="catlink" href="#teas">Teas</a>
+          <a class="catlink" href="#pastries">Pastries</a>
+          <a class="catlink" href="#beans">Whole Beans</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="menu-sticky-spacer"></div>
+
+    <!-- ================= MENU CONTENT ================= -->
+    <section class="section">
+      <div class="container">
+
+        <!-- Empty State -->
+        <div class="menu-empty" id="emptyState" style="display:none;">
+          <h2>Oops! We don't have that blend yet.</h2>
+          <p>Try a different search, or view the full menu.</p>
+          <button class="btn btn-primary" id="viewAllBtn" type="button">View All Drinks</button>
+        </div>
+
+        <!-- Espresso -->
+        <div class="menu-block" id="espresso">
+          <div class="menu-head">
+            <h2>Espresso</h2>
+            <p>Classic espresso drinks with a velvet finish.</p>
+          </div>
+          <div class="menu-grid" id="grid-espresso"></div>
+        </div>
+
+        <!-- Ice Blended -->
+        <div class="menu-block" id="iceblended">
+          <div class="menu-head">
+            <h2>Ice Blended</h2>
+            <p>Cold, creamy blends for peak refresh.</p>
+          </div>
+          <div class="menu-grid" id="grid-iceblended"></div>
+        </div>
+
+        <!-- Teas -->
+        <div class="menu-block" id="teas">
+          <div class="menu-head">
+            <h2>Teas</h2>
+            <p>Herbal, classic, and calming blends.</p>
+          </div>
+          <div class="menu-grid" id="grid-teas"></div>
+        </div>
+
+        <!-- Pastries -->
+        <div class="menu-block" id="pastries">
+          <div class="menu-head">
+            <h2>Pastries</h2>
+            <p>Fresh baked treats to pair with your coffee.</p>
+          </div>
+          <div class="menu-grid" id="grid-pastries"></div>
+        </div>
+
+        <!-- Beans -->
+        <div class="menu-block" id="beans">
+          <div class="menu-head">
+            <h2>Whole Beans</h2>
+            <p>Bring the Velvet Brew flavor home.</p>
+          </div>
+          <div class="menu-grid" id="grid-beans"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= NUTRITION MODAL ================= -->
+    <div class="modal" id="nutritionModal" aria-hidden="true">
+      <div class="modal-overlay" id="modalOverlay"></div>
+      <div class="modal-card">
+        <div class="modal-head">
+          <h3 id="modalTitle">Nutrition</h3>
+          <button class="modal-close" id="modalClose" type="button">✕</button>
+        </div>
+        <div class="modal-body">
+          <div class="nutri-row">
+            <p class="nutri-label">Calories</p>
+            <p class="nutri-value" id="modalCalories">0</p>
+          </div>
+          <div class="nutri-row">
+            <p class="nutri-label">Allergens</p>
+            <p class="nutri-value" id="modalAllergens">None</p>
+          </div>
+          <p class="nutri-note">Nutrition is an estimate and may vary based on customization.</p>
+        </div>
+        <div class="modal-actions">
+          <button class="btn btn-ghost" id="modalOk" type="button">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-pro">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <p class="footer-brand">Velvet Brew</p>
+          <p class="footer-muted">Premium coffee and bakery. Clean flavor, calm luxury.</p>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/menu.js"></script>
+</body>
+</html>

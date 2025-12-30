@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Orders | Velvet Brew Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="admin-page">
+
+  <header class="admin-topbar">
+    <div class="admin-topbar-left">
+      <h1 class="admin-title">Orders</h1>
+      <p class="admin-sub">Live orders from MongoDB</p>
+    </div>
+
+    <div class="admin-topbar-actions">
+      <a class="btn btn-ghost small" href="admin-menu.html">Menu</a>
+      <button class="btn btn-ghost small" id="refreshOrders">Refresh</button>
+      <button class="btn btn-ghost small" id="logoutBtn">Logout</button>
+    </div>
+  </header>
+
+  <main class="admin-shell">
+    <section class="admin-panel">
+      <div id="ordersEmpty" class="admin-empty" style="display:none;">
+        No orders yet.
+      </div>
+      <div id="ordersList" class="orders-list"></div>
+    </section>
+  </main>
+
+  <script src="js/admin-orders.js"></script>
+</body>
+</html>

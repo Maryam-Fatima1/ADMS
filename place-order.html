@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | Velvet Brew</title>
+  <meta name="description" content="Complete your order details and place your Velvet Brew order." />
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <!-- Fonts: Serif headings + Sans body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ================= NAV ================= -->
+  <header class="nav glass-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Velvet Brew Home">
+        <span class="brand-mark">VB</span>
+        <span class="brand-text">Velvet Brew</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="menu.html">Menu</a>
+        <a class="nav-link" href="track-order.html">Track Order</a>
+       <a class="nav-link" href="place-order.html">Checkout</a>
+<a class="nav-icon" href="place-order.html" aria-label="Cart">
+
+          <span class="icon-circle">🛒</span>
+          <span class="badge" id="cartBadge">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= CHECKOUT HERO ================= -->
+    <section class="checkout-hero">
+      <div class="container checkout-hero-inner">
+        <div>
+          <h1 class="checkout-title">Checkout</h1>
+          <p class="checkout-sub">Confirm details, then place your order.</p>
+        </div>
+
+        <div class="mode-toggle" role="tablist" aria-label="Delivery or pickup">
+          <button class="mode-btn active" id="modeDelivery" type="button" role="tab" aria-selected="true">
+            Delivery
+          </button>
+          <button class="mode-btn" id="modePickup" type="button" role="tab" aria-selected="false">
+            Pickup
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CHECKOUT GRID ================= -->
+    <section class="section">
+      <div class="container">
+        <!-- Empty cart state -->
+        <div class="cart-empty" id="cartEmpty" style="display:none;">
+          <div class="empty-icon">☕</div>
+          <h2>Your cart is empty</h2>
+          <p>Add something delicious and come back to checkout.</p>
+          <a class="btn btn-primary" href="menu.html">Start Your Order</a>
+        </div>
+
+        <div class="checkout-grid" id="checkoutGrid" style="display:none;">
+          <!-- LEFT: FORM + ITEMS -->
+          <div class="checkout-left">
+            <!-- Customer details -->
+            <div class="panel">
+              <div class="panel-head">
+                <h2>Customer details</h2>
+                <p class="muted">We will use this to confirm and track your order.</p>
+              </div>
+
+              <form class="checkout-form" id="checkoutForm">
+                <div class="form-row">
+                  <div class="field">
+                    <label for="fullName">Full name</label>
+                    <input id="fullName" name="fullName" type="text" placeholder="Your name" required />
+                  </div>
+
+                  <div class="field">
+                    <label for="phone">Phone number</label>
+                    <input id="phone" name="phone" type="tel" placeholder="0300 1234567" required />
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="field">
+                    <label for="branch">Branch</label>
+                    <select id="branch" name="branch" required>
+                      <option value="Velvet Brew, Gulberg" selected>Velvet Brew, Gulberg</option>
+                      <option value="Velvet Brew, DHA">Velvet Brew, DHA</option>
+                      <option value="Velvet Brew, Johar Town">Velvet Brew, Johar Town</option>
+                    </select>
+                  </div>
+
+                  <div class="field">
+                    <label for="eta">Estimated time</label>
+                    <input id="eta" name="eta" type="text" value="25–35 mins" readonly />
+                  </div>
+                </div>
+
+                <!-- Delivery fields -->
+                <div class="panel-subhead" id="deliveryHead">
+                  <h3>Delivery details</h3>
+                  <p class="muted">Make sure your address is accurate.</p>
+                </div>
+
+                <div class="field" id="addressField">
+                  <label for="address">Delivery address</label>
+                  <input id="address" name="address" type="text" placeholder="House, street, area, city" />
+                </div>
+
+                <div class="field">
+                  <label for="notes">Special instructions</label>
+                  <textarea id="notes" name="notes" rows="4" placeholder="Leave at the door, no sugar, call on arrival..."></textarea>
+                </div>
+
+                <!-- Order items preview -->
+                <div class="panel-subhead">
+                  <h3>Your items</h3>
+                  <p class="muted">Review your selections before placing the order.</p>
+                </div>
+
+                <ul class="checkout-items" id="checkoutItems">
+                  <!-- Filled by JS -->
+                </ul>
+
+                <!-- Mobile place order -->
+                <div class="mobile-place">
+                  <button class="btn btn-primary btn-full" id="placeOrderMobile" type="submit">
+                    Place Order
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- RIGHT: SUMMARY -->
+          <aside class="checkout-right">
+            <div class="summary-card">
+              <div class="summary-head">
+                <h2>Order summary</h2>
+                <p class="muted" id="summaryCount">0 items</p>
+              </div>
+
+              <div class="summary-rows">
+                <div class="sum-row">
+                  <span>Subtotal</span>
+                  <span id="sumSubtotal">$0.00</span>
+                </div>
+                <div class="sum-row">
+                  <span>Tax</span>
+                  <span id="sumTax">$0.00</span>
+                </div>
+                <div class="sum-row grand">
+                  <span>Total</span>
+                  <span id="sumTotal">$0.00</span>
+                </div>
+              </div>
+
+              <button class="btn btn-primary btn-full" id="placeOrderBtn" type="button">
+                Place Order
+              </button>
+
+              <p class="summary-note">
+                By placing your order, you agree to our store policies.
+              </p>
+            </div>
+
+            <!-- Upsell -->
+            <div class="upsell-card">
+              <h3>Pairs well with</h3>
+              <div class="upsell-row" id="upsellRow">
+                <!-- Filled by JS -->
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/checkout-page.js"></script>
+</body>
+</html>

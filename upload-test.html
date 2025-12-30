@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Velvet Brew Upload Test</title>
+</head>
+<body>
+  <h2>Upload Menu Item (Test)</h2>
+
+  <form id="form">
+    <input name="name" value="Karak Chai" required><br><br>
+    <input name="price" value="250" required><br><br>
+    <input name="category" value="Chai" required><br><br>
+    <input name="description" value="Strong Pakistani karak chai"><br><br>
+
+    <input type="file" name="image" accept="image/*" required><br><br>
+
+    <button type="submit">Send</button>
+  </form>
+
+  <pre id="output"></pre>
+
+  <script>
+    const form = document.getElementById("form");
+    const output = document.getElementById("output");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      const res = await fetch("http://localhost:5000/api/menu", {
+        method: "POST",
+        body: formData
+      });
+
+      const data = await res.json();
+      output.textContent = JSON.stringify(data, null, 2);
+
+      if (data?.data?.image) {
+        output.textContent +=
+          "\n\nImage URL:\nhttp://localhost:5000" + data.data.image;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmed | Velvet Brew</title>
+  <meta name="description" content="Your Velvet Brew order is confirmed. View receipt and track status." />
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <!-- Fonts: Serif headings + Sans body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ================= NAV ================= -->
+  <header class="nav glass-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Velvet Brew Home">
+        <span class="brand-mark">VB</span>
+        <span class="brand-text">Velvet Brew</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="menu.html">Menu</a>
+        <a class="nav-link" href="track-order.html">Track Order</a>
+        <a class="nav-link active" href="order-success.html">Receipt</a>
+
+        <a class="nav-icon" href="checkout.html" aria-label="Cart">
+          <span class="icon-circle">🛒</span>
+          <span class="badge" id="cartBadge">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= SUCCESS HERO ================= -->
+    <section class="success-hero">
+      <div class="container success-hero-inner">
+        <div class="success-badge" aria-hidden="true">✅</div>
+
+        <h1 class="success-title">Order Confirmed</h1>
+        <p class="success-sub">
+          Your order has been placed successfully. Keep this Order ID to track your status.
+        </p>
+
+        <div class="success-actions">
+          <a class="btn btn-primary" id="trackBtn" href="track-order.html">Track Order</a>
+          <a class="btn btn-ghost" href="menu.html">Continue Shopping</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RECEIPT ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="receipt-grid">
+          <!-- Receipt Card -->
+          <div class="receipt-card">
+            <div class="receipt-head">
+              <div>
+                <p class="receipt-kicker">Receipt</p>
+                <h2 class="receipt-title">Velvet Brew</h2>
+              </div>
+              <span class="receipt-chip" id="orderTypeChip">Delivery</span>
+            </div>
+
+            <div class="receipt-meta">
+              <div class="meta-row">
+                <p class="meta-label">Order ID</p>
+                <p class="meta-value" id="orderIdText">VB-00000</p>
+              </div>
+
+              <div class="meta-row">
+                <p class="meta-label">Estimated Time</p>
+                <p class="meta-value" id="etaText">20–30 mins</p>
+              </div>
+
+              <div class="meta-row">
+                <p class="meta-label">Branch</p>
+                <p class="meta-value" id="branchText">Velvet Brew, Gulberg</p>
+              </div>
+
+              <div class="meta-row" id="addressRow" style="display:none;">
+                <p class="meta-label">Delivery Address</p>
+                <p class="meta-value" id="addressText">—</p>
+              </div>
+            </div>
+
+            <div class="receipt-items">
+              <p class="items-title">Items</p>
+              <ul class="receipt-list" id="receiptItems">
+                <!-- Filled by JS -->
+              </ul>
+            </div>
+
+            <div class="receipt-totals">
+              <div class="total-row">
+                <span>Subtotal</span>
+                <span id="subtotalText">$0.00</span>
+              </div>
+
+              <div class="total-row">
+                <span>Tax</span>
+                <span id="taxText">$0.00</span>
+              </div>
+
+              <div class="total-row grand">
+                <span>Total</span>
+                <span id="totalText">$0.00</span>
+              </div>
+            </div>
+
+            <div class="receipt-note">
+              <p class="note-title">Next steps</p>
+              <p class="note-text">
+                You can track your order anytime using your Order ID and phone number.
+              </p>
+            </div>
+          </div>
+
+          <!-- Side Card -->
+          <div class="side-card">
+            <h3 class="side-title">What happens now?</h3>
+
+            <div class="side-steps">
+              <div class="side-step">
+                <span class="side-ico">☕</span>
+                <div>
+                  <p class="side-step-title">Preparing</p>
+                  <p class="side-step-sub">Your barista starts crafting your drink.</p>
+                </div>
+              </div>
+
+              <div class="side-step">
+                <span class="side-ico">🛵</span>
+                <div>
+                  <p class="side-step-title">On the way</p>
+                  <p class="side-step-sub">If delivery, your rider will be assigned.</p>
+                </div>
+              </div>
+
+              <div class="side-step">
+                <span class="side-ico">✅</span>
+                <div>
+                  <p class="side-step-title">Delivered / Ready</p>
+                  <p class="side-step-sub">Enjoy your Velvet Brew.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="side-actions">
+              <a class="btn btn-secondary" href="index.html">Back to Home</a>
+              <a class="btn btn-ghost" href="track-order.html">Track Another Order</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Empty / fallback -->
+        <div class="receipt-empty" id="receiptEmpty" style="display:none;">
+          <h2>No receipt found</h2>
+          <p>
+            Your receipt data is missing. Please go back to the menu and place an order again.
+          </p>
+          <a class="btn btn-primary" href="menu.html">Start Your Order</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/order-success.js"></script>
+</body>
+</html>

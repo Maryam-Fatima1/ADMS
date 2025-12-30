@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- ================= BASIC META ================= -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Velvet Brew | Premium Coffee & Bakery</title>
+  <meta name="description" content="Velvet Brew is a premium cafe serving espresso, cold brew, bakery, and whole beans. Order online or find a cafe near you." />
+
+  <!-- ================= FAVICON ================= -->
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <!-- ================= FONTS (Serif + Sans) ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- ================= CSS ================= -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ================= STICKY GLASS NAV ================= -->
+  <header class="nav glass-nav" id="top">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Velvet Brew Home">
+        <span class="brand-mark">VB</span>
+        <span class="brand-text">Velvet Brew</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="menu.html">Menu</a>
+        <a class="nav-link" href="#seasonal">Seasonal</a>
+        <a class="nav-link" href="#story">Our Story</a>
+        <a class="nav-link" href="#locations">Store Locator</a>
+
+        <a class="nav-icon" href="checkout.html" aria-label="Cart">
+          <span class="icon-circle">🛒</span>
+          <span class="badge" id="cartBadge">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO: IMAGE BACKGROUND ================= -->
+    <section class="hero-image">
+      <div class="hero-bg" style="background-image:url('assets/images/hero.jpg');"></div>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <p class="hero-pill">Premium Coffee, Crafted Daily</p>
+
+        <h1 class="hero-heading">
+          Your Daily Escape,
+          <span class="accent">Crafted with Care</span>
+        </h1>
+
+        <p class="hero-text">
+          Espresso, cold brew, bakery, and whole beans. Order online in seconds or find a Velvet Brew cafe near you.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="menu.html">Order Online</a>
+          <a class="btn btn-ghost" href="#locations">Find a Cafe</a>
+        </div>
+
+        <div class="hero-trust">
+          <div class="trust-item">
+            <p class="trust-num">4.9</p>
+            <p class="trust-label">Average Rating</p>
+          </div>
+          <div class="trust-item">
+            <p class="trust-num">Fresh</p>
+            <p class="trust-label">Brewed to Order</p>
+          </div>
+          <div class="trust-item">
+            <p class="trust-num">Fast</p>
+            <p class="trust-label">Pickup and Delivery</p>
+          </div>
+        </div>
+      </div>
+
+      <a class="scroll-hint" href="#seasonal" aria-label="Scroll to Seasonal Specials">Scroll</a>
+    </section>
+
+    <!-- ================= SEASONAL SPOTLIGHT ================= -->
+    <section class="section" id="seasonal">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Seasonal Spotlight</h2>
+            <p class="section-sub">Limited time offers to keep your menu feeling fresh and premium.</p>
+          </div>
+
+          <a class="link-arrow" href="menu.html">View full menu <span>→</span></a>
+        </div>
+
+        <div class="seasonal-row">
+          <article class="season-card">
+            <div class="season-img" style="background-image:url('assets/images/seasonal-1.jpg');"></div>
+            <div class="season-body">
+              <p class="season-tag">Limited</p>
+              <h3 class="season-title">Winter Vanilla Latte</h3>
+              <p class="season-text">Smooth espresso with warm vanilla notes and silky foam.</p>
+              <div class="season-actions">
+                <span class="price">$5.90</span>
+                <a class="mini-btn" href="menu.html">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="season-card">
+            <div class="season-img" style="background-image:url('assets/images/seasonal-2.jpg');"></div>
+            <div class="season-body">
+              <p class="season-tag">New</p>
+              <h3 class="season-title">Mocha Cold Brew</h3>
+              <p class="season-text">Cold brew with rich cocoa finish, clean and bold.</p>
+              <div class="season-actions">
+                <span class="price">$6.20</span>
+                <a class="mini-btn" href="menu.html">Order</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="season-card">
+            <div class="season-img" style="background-image:url('assets/images/seasonal-3.jpg');"></div>
+            <div class="season-body">
+              <p class="season-tag">Popular</p>
+              <h3 class="season-title">Caramel Cappuccino</h3>
+              <p class="season-text">Classic cappuccino topped with caramel sweetness.</p>
+              <div class="season-actions">
+                <span class="price">$5.50</span>
+                <a class="mini-btn" href="menu.html">Order</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CATEGORY QUICK LINKS ================= -->
+    <section class="section section-soft">
+      <div class="container">
+        <h2 class="section-title">Shop by Category</h2>
+        <p class="section-sub">Quick access to your favorites.</p>
+
+        <div class="cat-grid">
+          <a class="cat-tile" href="menu.html#hot">
+            <div class="cat-icon" style="background-image:url('assets/images/cat-hot.jpg');"></div>
+            <p class="cat-name">Hot Coffee</p>
+          </a>
+
+          <a class="cat-tile" href="menu.html#cold">
+            <div class="cat-icon" style="background-image:url('assets/images/cat-cold.jpg');"></div>
+            <p class="cat-name">Cold Brew</p>
+          </a>
+
+          <a class="cat-tile" href="menu.html#bakery">
+            <div class="cat-icon" style="background-image:url('assets/images/cat-bakery.jpg');"></div>
+            <p class="cat-name">Bakery</p>
+          </a>
+
+          <a class="cat-tile" href="menu.html#beans">
+            <div class="cat-icon" style="background-image:url('assets/images/cat-beans.jpg');"></div>
+            <p class="cat-name">Whole Beans</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= OUR STORY ================= -->
+    <section class="section" id="story">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-media" aria-hidden="true">
+            <div class="story-photo" style="background-image:url('assets/images/story.jpg');"></div>
+          </div>
+
+          <div class="story-copy">
+            <p class="story-kicker">Bean to Cup</p>
+            <h2 class="story-title">Sourced with intention. Roasted for velvet taste.</h2>
+            <p class="story-text">
+              Velvet Brew focuses on balanced espresso and smooth extraction. We source quality beans, roast in small batches,
+              and craft flavors that feel calm, clean, and premium.
+            </p>
+
+            <div class="story-points">
+              <div class="story-point">
+                <p class="sp-title">Ethical sourcing</p>
+                <p class="sp-text">Partner farms and transparent sourcing.</p>
+              </div>
+
+              <div class="story-point">
+                <p class="sp-title">Small batch roasting</p>
+                <p class="sp-text">Fresh profiles that stay consistent.</p>
+              </div>
+
+              <div class="story-point">
+                <p class="sp-title">Barista craft</p>
+                <p class="sp-text">Dialed-in espresso and silky milk.</p>
+              </div>
+            </div>
+
+            <div class="story-actions">
+              <a class="btn btn-primary" href="menu.html#beans">Shop Whole Beans</a>
+              <a class="btn btn-ghost" href="menu.html">Order Drinks</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SOCIAL PROOF GRID ================= -->
+    <section class="section section-soft" id="social">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2 class="section-title">Loved by our community</h2>
+            <p class="section-sub">Moments, cups, and cravings shared by our customers.</p>
+          </div>
+          <a class="link-arrow" href="#">Follow us <span>→</span></a>
+        </div>
+
+        <div class="ig-grid">
+          <div class="ig-card" style="background-image:url('assets/images/ig-1.jpg');"></div>
+          <div class="ig-card" style="background-image:url('assets/images/ig-2.jpg');"></div>
+          <div class="ig-card" style="background-image:url('assets/images/ig-3.jpg');"></div>
+          <div class="ig-card" style="background-image:url('assets/images/ig-4.jpg');"></div>
+          <div class="ig-card" style="background-image:url('assets/images/ig-5.jpg');"></div>
+          <div class="ig-card" style="background-image:url('assets/images/ig-6.jpg');"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= REWARDS BANNER ================= -->
+    <section class="rewards">
+      <div class="container rewards-inner">
+        <div class="rewards-left">
+          <p class="rewards-kicker">Velvet Rewards</p>
+          <h3 class="rewards-title">Join our loyalty program and get free coffee.</h3>
+          <p class="rewards-text">Earn points, unlock member offers, and get birthday treats.</p>
+        </div>
+
+        <div class="rewards-right">
+          <a class="btn btn-primary" href="#">Join Rewards</a>
+          <a class="btn btn-ghost" href="#">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= STORE LOCATOR ================= -->
+    <section class="section" id="locations">
+      <div class="container locator">
+        <div class="locator-card">
+          <div class="locator-copy">
+            <h2 class="section-title">Find a Velvet Brew near you</h2>
+            <p class="section-sub">Store hours, directions, and pickup options.</p>
+          </div>
+
+          <div class="locator-actions">
+            <a class="btn btn-primary" href="#">Store Locator</a>
+            <a class="btn btn-ghost" href="track-order.html">Track Order</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer-pro">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <p class="footer-brand">Velvet Brew</p>
+          <p class="footer-muted">Premium coffee and bakery. Clean flavor, calm luxury.</p>
+
+          <div class="footer-social">
+            <a class="social-icon" href="#" aria-label="Instagram">IG</a>
+            <a class="social-icon" href="#" aria-label="Facebook">FB</a>
+            <a class="social-icon" href="#" aria-label="TikTok">TT</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-title">Explore</p>
+          <a class="footer-link" href="menu.html">Menu</a>
+          <a class="footer-link" href="#seasonal">Seasonal</a>
+          <a class="footer-link" href="#story">Our Story</a>
+          <a class="footer-link" href="#locations">Store Locator</a>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-title">Company</p>
+          <a class="footer-link" href="#">About</a>
+          <a class="footer-link" href="#">Careers</a>
+          <a class="footer-link" href="#">Franchise</a>
+          <a class="footer-link" href="#">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-title">Newsletter</p>
+          <p class="footer-muted">Get seasonal drops and member offers.</p>
+
+          <form class="newsletter" action="#" method="post">
+            <input class="newsletter-input" type="email" placeholder="Email address" required />
+            <button class="newsletter-btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p class="footer-muted">© <span id="year"></span> Velvet Brew. All rights reserved.</p>
+        <a class="footer-link small" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

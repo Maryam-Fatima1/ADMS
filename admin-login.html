@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login | Velvet Brew</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="admin-login">
+  <div class="admin-login-card">
+    <h1 class="admin-login-title">Velvet Brew Admin</h1>
+    <p class="admin-login-sub">Sign in to manage menu & orders</p>
+
+    <form id="adminLoginForm" class="admin-login-form">
+      <label>Email</label>
+      <input
+        type="email"
+        id="email"
+        placeholder="admin@velvetbrew.com"
+        required
+      />
+
+      <label>Password</label>
+      <input
+        type="password"
+        id="password"
+        placeholder="••••••••"
+        required
+      />
+
+      <button type="submit" class="admin-login-btn">
+        Sign In
+      </button>
+
+      <div id="loginError" class="admin-login-error"></div>
+    </form>
+  </div>
+
+  <script src="js/admin-login.js"></script>
+</body>
+</html>

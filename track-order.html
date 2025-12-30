@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Track Order | Velvet Brew</title>
+  <meta name="description" content="Track your Velvet Brew order status in real time." />
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <!-- Fonts: Serif headings + Sans body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ================= NAV ================= -->
+  <header class="nav glass-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Velvet Brew Home">
+        <span class="brand-mark">VB</span>
+        <span class="brand-text">Velvet Brew</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="menu.html">Menu</a>
+        <a class="nav-link active" href="track-order.html">Track Order</a>
+        <a class="nav-link" href="track-order.html">Checkout</a>
+
+        <a class="nav-icon" href="checkout.html" aria-label="Cart">
+          <span class="icon-circle">🛒</span>
+          <span class="badge" id="cartBadge">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section class="track-hero">
+      <div class="container track-hero-inner">
+        <div class="track-hero-copy">
+          <h1 class="track-title">Track your order</h1>
+          <p class="track-sub">
+            Enter your Order ID and phone number to view real time status.
+          </p>
+        </div>
+
+        <div class="track-search-card">
+          <form id="trackForm" class="track-form" autocomplete="off">
+            <div class="field">
+              <label for="orderId">Order ID</label>
+              <input id="orderId" name="orderId" type="text" placeholder="VB-10294" required />
+            </div>
+
+            <div class="field">
+              <label for="phone">Phone Number</label>
+              <input id="phone" name="phone" type="tel" placeholder="0300 1234567" required />
+            </div>
+
+            <button class="btn btn-primary track-btn" type="submit">
+              <span>Track Order</span>
+            </button>
+
+            <p class="track-hint">
+              Tip: Try demo Order ID <b>VB-10294</b> with phone <b>03001234567</b>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RESULT AREA ================= -->
+    <section class="section">
+      <div class="container">
+        <!-- Status card -->
+        <div class="status-card" id="statusCard" style="display:none;">
+          <div class="status-top">
+            <div>
+              <p class="status-kicker">Current status</p>
+              <h2 class="status-title" id="statusTitle">Preparing</h2>
+              <p class="status-line" id="statusLine">Your barista is crafting your drink.</p>
+            </div>
+
+            <div class="status-actions">
+              <a class="btn btn-ghost" id="callBranchBtn" href="#" aria-label="Call branch">
+                Call Branch
+              </a>
+
+              <button class="btn btn-secondary" id="refreshBtn" type="button">
+                <span class="spinner" id="refreshSpinner" aria-hidden="true"></span>
+                <span id="refreshText">Refresh Status</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Progress tracker -->
+          <div class="progress-wrap">
+            <div class="progress-steps" id="progressSteps">
+              <!-- Filled by JS -->
+            </div>
+          </div>
+
+          <!-- Collapsible details -->
+          <details class="order-details" id="orderDetails">
+            <summary>
+              <span>Order details</span>
+              <span class="details-meta" id="detailsMeta">0 items</span>
+            </summary>
+
+            <div class="details-body">
+              <div class="details-grid">
+                <div class="details-col">
+                  <p class="details-label">Branch</p>
+                  <p class="details-value" id="branchName">Velvet Brew</p>
+                </div>
+
+                <div class="details-col">
+                  <p class="details-label">Rider</p>
+                  <p class="details-value" id="riderName">Not assigned</p>
+                </div>
+              </div>
+
+              <div class="items-wrap">
+                <p class="details-label">Items</p>
+                <ul class="items-list" id="itemsList">
+                  <!-- Filled by JS -->
+                </ul>
+              </div>
+            </div>
+          </details>
+        </div>
+
+        <!-- Error state -->
+        <div class="track-error" id="trackError" style="display:none;">
+          <h2>We could not find that order.</h2>
+          <p>Double check your Order ID and phone number, then try again.</p>
+          <button class="btn btn-primary" id="tryAgainBtn" type="button">Try Again</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Your global app helpers (badge, mobile nav) -->
+  <script src="js/app.js"></script>
+
+  <!-- Track order logic -->
+  <script src="js/track-order.js"></script>
+</body>
+</html>

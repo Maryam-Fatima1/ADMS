@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cart | Velvet Brew</title>
+  <meta name="description" content="Review your Velvet Brew cart, customize quantities, and checkout securely." />
+
+  <link rel="icon" type="image/png" href="assets/images/favicon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav glass-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Velvet Brew Home">
+        <span class="brand-mark">VB</span>
+        <span class="brand-text">Velvet Brew</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Primary navigation">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="menu.html">Menu</a>
+        <a class="nav-link" href="track-order.html">Track Order</a>
+        <a class="nav-link active" href="checkout.html">Cart</a>
+
+        <a class="nav-icon" href="checkout.html" aria-label="Cart">
+          <span class="icon-circle">🛒</span>
+          <span class="badge" id="cartBadge">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <!-- HEADER -->
+    <section class="cart-hero">
+      <div class="container cart-hero-inner">
+        <div>
+          <h1 class="cart-title">Your Cart</h1>
+          <p class="cart-sub">Review items, adjust quantities, and checkout.</p>
+        </div>
+
+        <!-- Delivery/Pickup Toggle -->
+        <div class="fulfillment">
+          <button class="fulfill-btn active" id="pickupBtn" type="button">Pickup</button>
+          <button class="fulfill-btn" id="deliveryBtn" type="button">Delivery</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT GRID -->
+    <section class="section">
+      <div class="container cart-grid">
+
+        <!-- LEFT: ITEMS -->
+        <div class="cart-left">
+          <!-- Empty state -->
+          <div class="cart-empty" id="emptyCart" style="display:none;">
+            <div class="empty-illu" aria-hidden="true">☕</div>
+            <h2>Your cup is empty</h2>
+            <p>Start your order and we’ll craft it fresh.</p>
+            <a class="btn btn-primary" href="menu.html">Start Your Order</a>
+          </div>
+
+          <!-- Items list -->
+          <div class="cart-list" id="cartList">
+            <!-- JS renders items here -->
+          </div>
+
+          <!-- Order Notes -->
+          <div class="cart-notes">
+            <h3>Special Instructions</h3>
+            <p class="muted">Allergies, door notes, or customization requests.</p>
+            <textarea id="orderNotes" placeholder="Example: Please leave at the door. No sugar."></textarea>
+          </div>
+
+          <!-- Upsell / pairs well -->
+          <div class="upsell">
+            <div class="upsell-head">
+              <h3>Pairs well with</h3>
+              <p class="muted">Popular add-ons customers love.</p>
+            </div>
+
+            <div class="upsell-row" id="upsellRow">
+              <!-- JS will render suggested items -->
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: ORDER SUMMARY (STICKY) -->
+        <aside class="cart-right">
+          <div class="summary-card">
+            <h3>Order Summary</h3>
+
+            <div class="summary-row">
+              <span class="muted">Subtotal</span>
+              <span id="sumSubtotal">$0.00</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="muted">Estimated Tax</span>
+              <span id="sumTax">$0.00</span>
+            </div>
+
+            <div class="summary-row">
+              <span class="muted">Service Fee</span>
+              <span id="sumFee">$0.00</span>
+            </div>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-row total">
+              <span>Total</span>
+              <span id="sumTotal">$0.00</span>
+            </div>
+
+       <a href="place-order.html" class="btn btn-primary btn-full" id="checkoutBtn">
+  Checkout
+</a>
+
+
+
+            <p class="summary-note">
+              Secure checkout. You’ll confirm details on the next step.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer-pro">
+      <div class="container footer-grid">
+        <div class="footer-col">
+          <p class="footer-brand">Velvet Brew</p>
+          <p class="footer-muted">Premium coffee and bakery. Clean flavor, calm luxury.</p>
+
+          <div class="footer-social">
+            <a class="social-icon" href="#" aria-label="Instagram">IG</a>
+            <a class="social-icon" href="#" aria-label="Facebook">FB</a>
+            <a class="social-icon" href="#" aria-label="TikTok">TT</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-title">Explore</p>
+          <a class="footer-link" href="index.html">Home</a>
+          <a class="footer-link" href="menu.html">Menu</a>
+          <a class="footer-link" href="track-order.html">Track Order</a>
+          <a class="footer-link" href="checkout.html">Cart</a>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-title">Company</p>
+          <a class="footer-link" href="#">About</a>
+          <a class="footer-link" href="#">Careers</a>
+          <a class="footer-link" href="#">Franchise</a>
+          <a class="footer-link" href="#">Contact</a>
+        </div>
+
+        <div class="footer-col">
+          <p class="footer-title">Newsletter</p>
+          <p class="footer-muted">Get seasonal drops and member offers.</p>
+
+          <form class="newsletter" action="#" method="post">
+            <input class="newsletter-input" type="email" placeholder="Email address" required />
+            <button class="newsletter-btn" type="submit">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p class="footer-muted">© <span id="year"></span> Velvet Brew. All rights reserved.</p>
+        <a class="footer-link small" href="#">Back to top</a>
+      </div>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>
